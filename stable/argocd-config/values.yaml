@@ -23,4 +23,6 @@ applicationTargets: {}
 # target namespaces. Not sure why this is necessary...
 controllerRbac: true
 
+createNamespaces: true
+
 clusterType: ""
