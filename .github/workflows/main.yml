@@ -25,7 +25,14 @@ jobs:
           ref: gh-pages
 
       - name: Publish charts
-        run: ./scripts/publish.sh tmp
+        run: |
+          CHART_DIR=stable
+
+          cp -n tmp/* ${CHART_DIR}
+          rm -rf tmp/
+
+          helm repo index "${CHART_DIR}" --url "${REPO_URL}/${CHART_DIR}/" --merge "${CHART_DIR}/index.yaml"
+          cp "${CHART_DIR}/index.yaml" .
 
       - name: Push changes
         run: |
