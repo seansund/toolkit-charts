@@ -1,0 +1,37 @@
+name: Publish charts
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install helm 3
+        run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+
+      - name: Package helm charts
+        run: ./scripts/package.sh tmp
+
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - name: Publish charts
+        run: ./scripts/publish.sh tmp
+
+      - name: Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Publish charts"
+          git push
