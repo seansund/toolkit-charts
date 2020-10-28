@@ -3,16 +3,16 @@ entries:
   argocd-config:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-07-06T13:47:33.42386627Z"
+    created: "2020-10-28T16:59:33.312626322Z"
     description: Helm chart to create ArgoCD custom resources for projects and applications
       with optional RBAC configuration to allow ArgoCD to create resources in other
       namespaces
-    digest: 4c65bdecf372af7137b20da841b5d0bb7a44d85d5e55c9803b276072d9889085
+    digest: 2b825302d68a8c4e68130047385b59e3ccaa98881550938ef25d29523accd874
     name: argocd-config
     type: application
     urls:
-    - https://seansund.github.io/toolkit-charts/stable/argocd-config-0.12.3.tgz
-    version: 0.12.3
+    - https://github.com/seansund/toolkit-charts/releases/download/argocd-config-0.15.0/argocd-config-0.15.0.tgz
+    version: 0.15.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2020-07-06T13:47:33.414513085Z"
@@ -24,6 +24,18 @@ entries:
     type: application
     urls:
     - https://seansund.github.io/toolkit-charts/argocd-config-0.12.3.tgz
+    version: 0.12.3
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-07-06T13:47:33.42386627Z"
+    description: Helm chart to create ArgoCD custom resources for projects and applications
+      with optional RBAC configuration to allow ArgoCD to create resources in other
+      namespaces
+    digest: 4c65bdecf372af7137b20da841b5d0bb7a44d85d5e55c9803b276072d9889085
+    name: argocd-config
+    type: application
+    urls:
+    - https://seansund.github.io/toolkit-charts/stable/argocd-config-0.12.3.tgz
     version: 0.12.3
   - apiVersion: v2
     appVersion: 1.16.0
@@ -244,6 +256,16 @@ entries:
   argocd-operator:
   - apiVersion: v2
     appVersion: 0.0.9
+    created: "2020-10-28T16:59:33.410773913Z"
+    description: A Helm chart to install ArgoCD via the operator
+    digest: 09329d43052702c3466ff5853a7eec7f4c47764b515f8ea6efbb7e1f98ccd798
+    name: argocd-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/argocd-operator-0.2.0/argocd-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.0.9
     created: "2020-07-06T13:47:33.415367783Z"
     description: A Helm chart to install ArgoCD via the operator
     digest: 27a9ff603eb715614377a6153703fe6896c8fefbec05ba762e2af5a911bbfd95
@@ -262,16 +284,39 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/argocd-operator-0.1.0.tgz
     version: 0.1.0
+  cloud-setup:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-28T16:59:33.547098223Z"
+    dependencies:
+    - name: ibmcloud
+      repository: https://ibm-garage-cloud.github.io/toolkit-charts/
+      version: 0.3.1
+    - alias: cntk-dev-guide
+      name: doc-config
+      repository: https://ibm-garage-cloud.github.io/toolkit-charts/
+      version: 0.1.0
+    - alias: first-app
+      name: doc-config
+      repository: https://ibm-garage-cloud.github.io/toolkit-charts/
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 3dc126ba160c38903b3fb333c91f993754d579cd306da5169fada032de682b2a
+    name: cloud-setup
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/cloud-setup-0.3.0/cloud-setup-0.3.0.tgz
+    version: 0.3.0
   developer-dashboard:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-06T13:47:33.415964682Z"
+    created: "2020-10-28T16:59:33.647838008Z"
     description: A Helm chart for Kubernetes
-    digest: 83323b46c41457b2600b92f40a01a32f8ad96c893e7244bc316a6e8d1ec85011
+    digest: f46a7ee3789b0335f52fbb2354696ef35308ce8bb91a2b75401a1e0b83e02c82
     name: developer-dashboard
     urls:
-    - https://seansund.github.io/toolkit-charts/developer-dashboard-1.0.0.tgz
-    version: 1.0.0
+    - https://github.com/seansund/toolkit-charts/releases/download/developer-dashboard-1.2.1/developer-dashboard-1.2.1.tgz
+    version: 1.2.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-07-06T13:47:33.431362058Z"
@@ -280,6 +325,15 @@ entries:
     name: developer-dashboard
     urls:
     - https://seansund.github.io/toolkit-charts/stable/developer-dashboard-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-07-06T13:47:33.415964682Z"
+    description: A Helm chart for Kubernetes
+    digest: 83323b46c41457b2600b92f40a01a32f8ad96c893e7244bc316a6e8d1ec85011
+    name: developer-dashboard
+    urls:
+    - https://seansund.github.io/toolkit-charts/developer-dashboard-1.0.0.tgz
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
@@ -317,7 +371,38 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/developer-dashboard-0.1.0.tgz
     version: 0.1.0
+  doc-config:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-10-28T16:59:33.746752997Z"
+    description: A Helm chart to configure links to documentation within the cluster
+    digest: 30726859f287c3eecfe35fee1acaaaf9eacec7d4a3dcc6a81ec60729b63496fb
+    name: doc-config
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/doc-config-0.1.0/doc-config-0.1.0.tgz
+    version: 0.1.0
+  elasticsearch-operator:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-28T16:59:33.859491857Z"
+    description: A Helm chart for Kubernetes
+    digest: b35ef70a18ea996957aa7e4d91ab682f5fef576d07f7f20f1110619a1d2f4c07
+    name: elasticsearch-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/elasticsearch-operator-0.3.0/elasticsearch-operator-0.3.0.tgz
+    version: 0.3.0
   ibmcloud:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2020-10-28T16:59:33.955152654Z"
+    description: A Helm chart for to create a ConfigMap and Secret containing information
+      about the IBM Cloud environment
+    digest: 706436c5d438ac020b6534d4825d4bb2f0522013e11ec4d76e1edb2a808b2718
+    name: ibmcloud
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/ibmcloud-0.3.1/ibmcloud-0.3.1.tgz
+    version: 0.3.1
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-07-06T13:47:33.416253782Z"
@@ -388,6 +473,17 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/ibmcloud-0.1.0.tgz
     version: 0.1.0
+  ibmcloud-operator:
+  - apiVersion: v2
+    appVersion: 0.1.11
+    created: "2020-10-28T16:59:34.061146232Z"
+    description: A Helm chart for Kubernetes
+    digest: e59367ffa1d77e8df09eede50f6beb66bc59c370bdfdcaac6c1da13496621929
+    name: ibmcloud-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/ibmcloud-operator-0.1.1/ibmcloud-operator-0.1.1.tgz
+    version: 0.1.1
   ibmcloud-service:
   - apiVersion: v1
     appVersion: "1.0"
@@ -416,7 +512,29 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/ibmcloud-service-0.1.0.tgz
     version: 0.1.0
+  iteration-zero:
+  - apiVersion: v2
+    appVersion: 0.7.0-lite
+    created: "2020-10-28T16:59:34.28987486Z"
+    description: Helm chart to install the cli-tools image into a cluster so that
+      the iteration-zero scripts can be run
+    digest: 93360986b05f4e2b2632d006cc2e272e8121f19782d4f60c6d87c5f5b7f5d66c
+    name: iteration-zero
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/iteration-zero-0.1.0/iteration-zero-0.1.0.tgz
+    version: 0.1.0
   jaeger-operator:
+  - apiVersion: v2
+    appVersion: 1.18.0
+    created: "2020-10-28T16:59:34.419931092Z"
+    description: A Helm chart to install Jaeger via the operator
+    digest: e68dd0223f3ba1606586ecc3fda1a8adaa3b2162676f588466c9857642524724
+    name: jaeger-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/jaeger-operator-0.6.0/jaeger-operator-0.6.0.tgz
+    version: 0.6.0
   - apiVersion: v2
     appVersion: 1.18.0
     created: "2020-07-06T13:47:33.417747079Z"
@@ -467,6 +585,17 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/jaeger-operator-0.1.0.tgz
     version: 0.1.0
+  kiali-operator:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-28T16:59:34.515395295Z"
+    description: A Helm chart for Kubernetes
+    digest: 5bf3a634235499c52a0628fb93d9325fed79ea3bfde01b20f832b972b56b8f11
+    name: kiali-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/kiali-operator-0.3.0/kiali-operator-0.3.0.tgz
+    version: 0.3.0
   nexus-operator:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -572,6 +701,16 @@ entries:
   service-account:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2020-10-28T16:59:34.794392119Z"
+    description: A Helm chart for Kubernetes
+    digest: 94ee9785428563ca57cb66158d0758468cac9852ae425d0b707363c7f629858a
+    name: service-account
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/service-account-0.6.0/service-account-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2020-07-06T13:47:33.418997778Z"
     description: A Helm chart for Kubernetes
     digest: ec50558966f004edcf68020da01ce3d2590a3ad5299b4db202ab3bbf63ba4831
@@ -670,6 +809,28 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/service-account-0.1.0.tgz
     version: 0.1.0
+  service-mesh-operator:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-28T16:59:34.883683635Z"
+    description: A Helm chart for Kubernetes
+    digest: e607471d784f1c0bc1433247514468278a416c7eabd6d89bcdf51e43c95ebd49
+    name: service-mesh-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/service-mesh-operator-0.5.1/service-mesh-operator-0.5.1.tgz
+    version: 0.5.1
+  setup-job:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-10-28T16:59:34.983678528Z"
+    description: A Helm chart for Kubernetes
+    digest: d22440063cdbe9d4d8c8538c5af08aacdc5098a44b182b1e2fd2e35dc5d0ed5c
+    name: setup-job
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/setup-job-0.1.7/setup-job-0.1.7.tgz
+    version: 0.1.7
   swaggereditor:
   - apiVersion: v1
     appVersion: "1.0"
@@ -738,6 +899,16 @@ entries:
   tekton-operator:
   - apiVersion: v2
     appVersion: 1.18.0
+    created: "2020-10-28T16:59:35.175643543Z"
+    description: A Helm chart to install the Tekton operator
+    digest: 2751de4816f06ebae93432e23d7c8a9c0dbb6effb6af5f5e51defb7175de0a28
+    name: tekton-operator
+    type: application
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/tekton-operator-0.2.0/tekton-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.18.0
     created: "2020-07-06T13:47:33.420413575Z"
     description: A Helm chart to install the Tekton operator
     digest: 0a190b3cf38b943aa201c5afa226aaf26fcfadf4baf186952aa77d3fafe33c36
@@ -759,14 +930,14 @@ entries:
   tool-config:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-07-06T13:47:33.420770575Z"
+    created: "2020-10-28T16:59:35.309968475Z"
     description: A Helm chart to create a ConfigMap and Secret containing the configuration
       information for a deployed tool
-    digest: e2473766cb642e85acc9ef93202729fe4baf5f9ce2859fd095aaa410f3d8689d
+    digest: bf9c39d42003df393794e012efa0a761e3669a5dbb7e3709d63f14af827f8f3d
     name: tool-config
     urls:
-    - https://seansund.github.io/toolkit-charts/tool-config-0.7.0.tgz
-    version: 0.7.0
+    - https://github.com/seansund/toolkit-charts/releases/download/tool-config-0.9.0/tool-config-0.9.0.tgz
+    version: 0.9.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-07-06T13:47:33.453003824Z"
@@ -776,6 +947,16 @@ entries:
     name: tool-config
     urls:
     - https://seansund.github.io/toolkit-charts/stable/tool-config-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-07-06T13:47:33.420770575Z"
+    description: A Helm chart to create a ConfigMap and Secret containing the configuration
+      information for a deployed tool
+    digest: e2473766cb642e85acc9ef93202729fe4baf5f9ce2859fd095aaa410f3d8689d
+    name: tool-config
+    urls:
+    - https://seansund.github.io/toolkit-charts/tool-config-0.7.0.tgz
     version: 0.7.0
   - apiVersion: v1
     appVersion: "1.0"
@@ -877,4 +1058,14 @@ entries:
     urls:
     - https://seansund.github.io/toolkit-charts/stable/tool-config-0.1.0.tgz
     version: 0.1.0
+  tool-test:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-10-28T16:59:35.420755653Z"
+    description: A Helm chart for Kubernetes to test tool kit deployments
+    digest: 36a05b5e64c47093016631a20b416380acae791943e681592dec68681cf8370a
+    name: tool-test
+    urls:
+    - https://github.com/seansund/toolkit-charts/releases/download/tool-test-0.2.1/tool-test-0.2.1.tgz
+    version: 0.2.1
 generated: "2020-07-06T13:47:33.413881286Z"
